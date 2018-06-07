@@ -1,1 +1,20 @@
-/* You can add global styles to this file, and also import other style files */
+@import '../node_modules/font-awesome/scss/font-awesome';
+@import '../node_modules/bootstrap/scss/bootstrap';
+@import 'pages/scss/pages';
+
+
+.btn-primary{
+    border-radius: 2px;
+    border: solid 1px #667a4f;
+    font-size: 16px;
+    padding: 11px 14px;
+}
+
+.text-muted {
+    color: $color-muted;
+}
+
+.text-phragraph{
+    color: $color-phragraph;
+}
+
