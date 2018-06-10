@@ -132,7 +132,7 @@ label {
 ul,ol {
     margin-bottom: 10px;
     & > li {
-        padding-left: 3px;
+        padding-#{$left}: 3px;
         line-height: 24px;
     }
     &.lg-icon{
@@ -145,7 +145,7 @@ ul,ol {
     }
     &.no-style{
         list-style: none;
-        padding-left: 5px;
+        padding-#{$left}: 5px;
     }
 }
 address {
@@ -156,13 +156,13 @@ address {
 }
 blockquote {
     padding: 0 0 0 18px;
-    border-left:0;
+    border-#{$left}:0;
     &:before{
         content: '';
         font-family: FontAwesome;
         content: "\f10d";
-        margin-right: 13px;
-        float: left;
+        margin-#{$right}: 13px;
+        float: $left;
     }
     p {
         font-size: 16px;
@@ -170,23 +170,23 @@ blockquote {
     small {
         line-height: 29px;
         color: #8b91a0;
-        padding-left: 30px;
+        padding-#{$left}: 30px;
         &:before {
             content: "";
         }
     }
     &.pull-right {
-        border-right:0;
+        border-#{$right}:0;
         &:before{
-            float: right;
+            float: $right;
             content: '';
             font-family: FontAwesome;
             content: "\f10d";
-            margin-left: 13px;
-            margin-right: 0;
+            margin-#{$left}: 13px;
+            margin-#{$right}: 0;
         }
         small {
-            padding-right: 30px;
+            padding-#{$right}: 30px;
             &:after {
                 content: "";
             }
@@ -484,10 +484,10 @@ hr{
 */
 
 .text-right {
-    text-align: right !important;
+    text-align: $right !important;
 }
 .text-left {
-    text-align: left !important;
+    text-align: $left !important;
 }
 .text-center {
     text-align: center !important;

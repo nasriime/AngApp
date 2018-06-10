@@ -16,7 +16,7 @@ body {
     &.fixed-header {
         .header {
             position: fixed;
-            left: 0;
+            #{$left}: 0;
             top: 0;
         }
     }
@@ -87,9 +87,9 @@ body {
     }
     &.menu-pin{
         .overlay{
-            padding-left:0;
+            padding-#{$left}:0;
             .overlay-brand{
-                margin-left: 0;
+                margin-#{$left}: 0;
             }
         }
     }
@@ -110,14 +110,14 @@ body {
         -webkit-animation: none;
         animation: none;
         top: 73px;
-        background: url('#{$base-img-url}/progress/progress-circle-success.svg') no-repeat top left;
+        background: url('#{$base-img-url}/progress/progress-circle-success.svg') no-repeat top $left;
         background-size: 100% auto;
         margin: 0 auto;
         border-width: 0;
         border-radius: 0;
         width: 28px;
         height: 40px;
-        right: 19px;
+        #{$right}: 19px;
     }
 }
 /* Header
@@ -131,7 +131,7 @@ body {
     display: flex;
     height: $layout-header-height;
     width: 100%;
-    padding: 0 20px 0 0;
+    padding: side-values( 0 20px 0 0 );
     z-index: $zIndex-navbar;
     background-color: #fff;
     border-bottom: 1px solid fade($color-master-light, 70%);
@@ -183,8 +183,8 @@ body {
         color:$color-white;
         position:absolute;
         top:-6px;
-        float:right;
-        right:-5px;
+        float:$right;
+        #{$right}:-5px;
     }
     .notification-list{
         display:inline-block;
@@ -192,7 +192,7 @@ body {
     }
     .search-link{
         display:inline-block;
-        margin-left:15px;
+        margin-#{$left}:15px;
         color : $color-master;
         opacity: .7;
         font-size:14px;
@@ -200,7 +200,7 @@ body {
         line-height: 12px;
         font-family:$base-font-family;
         i{
-            margin-right:15px;
+            margin-#{$right}:15px;
             font-size:16px;
         }
         &:hover{
@@ -265,11 +265,11 @@ body {
     width: $layout-sidepanel-width;
     background-color:$color-menu;
     z-index: $zIndex-sidebar;
-    left:$layout-sidepanel-width-collapsed - $layout-sidepanel-width;
+    #{$left}:$layout-sidepanel-width-collapsed - $layout-sidepanel-width;
     position: fixed;
     bottom: 0;
     top: 0;
-    right: auto;
+    #{$right}: auto;
     overflow: hidden;
 -webkit-transition: -webkit-transform 400ms cubic-bezier($menu-bezier);
    -moz-transition: -moz-transform 400ms cubic-bezier($menu-bezier);
@@ -299,7 +299,7 @@ body {
         color: $color-white;
         width: 100%;
         padding: 0 20px;
-        padding-left: 30px;
+        padding-#{$left}: 30px;
         clear: both;
         z-index: 10;
         position: relative;
@@ -318,7 +318,7 @@ body {
     }
     .close-sidebar{
         position: absolute;
-        right: 19px;
+        #{$right}: 19px;
         top: 14px;
         padding: 9px;
         z-index: 1;
@@ -333,7 +333,7 @@ body {
         background-color:$color-menu-darker;
         display:block;
         z-index: 9;
-        padding: $layout-header-height+20 20px 20px 20px;
+        padding: side-values( $layout-header-height+20 20px 20px 20px );
         &.from-top{
             top:-100%;
             position: absolute;
@@ -386,7 +386,7 @@ body {
             & > li {
                 display: block;
                 padding:0;
-                clear: right;
+                clear: $right;
 
                 &:after, &:before{
                     display: table;
@@ -397,7 +397,7 @@ body {
                 & > a {
                     font-family: Arial, sans-serif;
                     display: inline-block;
-                    padding-left: 32px;
+                    padding-#{$left}: 32px;
                     min-height: $menu-icon-size;
                     line-height: $menu-icon-size;
                     font-size: 14px;
@@ -406,10 +406,10 @@ body {
                         background: #313131;
                     }
                     & > .arrow {
-                        float: right;
-                        padding-right: 30px;
+                        float: $right;
+                        padding-#{$right}: 30px;
                         &:before {
-                            float: right;
+                            float: $right;
                             display: inline;
                             font-size: 16px;
                             font-family: FontAwesome;
@@ -429,7 +429,7 @@ body {
                         margin-top: 12px;
                     }
                     & > .title{
-                        float: left;
+                        float: $left;
                         white-space: nowrap;
                         text-overflow: ellipsis;
                         overflow: hidden;
@@ -468,8 +468,8 @@ body {
                             ul {
                                 &.sub-menu {
                                     li {
-                                        padding-left: 10px;
-                                        padding-right: 3px
+                                        padding-#{$left}: 10px;
+                                        padding-#{$right}: 3px
                                     }
                                     .icon-thumbnail {
                                         width: 25px;
@@ -484,9 +484,9 @@ body {
                             & > a {
                                 & > .arrow {
                                     &:before {
-                                        float: right;
+                                        float: $right;
                                         margin-top: 1px;
-                                        margin-right: 20px;
+                                        margin-#{$right}: 20px;
                                         display: inline;
                                         font-size: 16px;
                                         font-family: FontAwesome;
@@ -498,9 +498,9 @@ body {
                                     }
                                     &.open {
                                         &:before {
-                                            float: right;
+                                            float: $right;
                                             margin-top: 1px;
-                                            margin-right: 18px;
+                                            margin-#{$right}: 18px;
                                             display: inline;
                                             font-family: FontAwesome;
                                             height: auto;
@@ -521,12 +521,12 @@ body {
                         display: none;
                         list-style: none;
                         clear: both;
-                        margin: 0 0 10px 0;
+                        margin: side-values(0 0 10px 0);
                         background-color: $color-menu-dark;
                         padding: 18px 0 10px 0;
                         & > li {
                             background: none;
-                            padding: 0px 20px 0 40px;
+                            padding: side-values( 0px 20px 0 40px );
                             margin-top: 1px;
                             &:hover{
                                 & > .icon-thumbnail{
@@ -579,9 +579,9 @@ body {
     text-align: center;
     vertical-align: middle;
     position: relative;
-    left: 0;
-    float: right;
-    margin-right: 14px;
+    #{$left}: 0;
+    float: $right;
+    margin-#{$right}: 14px;
     color:$color-menu-light;
     font-size: 16px;
     -webkit-transition: -webkit-transform 0.4s cubic-bezier($menu-bezier);
@@ -617,8 +617,8 @@ body {
 .secondary-sidebar {
     background: $sidebar-background-color;
     width: $secondary-sidebar-width;
-    float: left;
-    padding-left: 47px;
+    float: $left;
+    padding-#{$left}: 47px;
     height: 100%;
     position: fixed;
     &.not-fixed{
@@ -644,7 +644,7 @@ body {
         letter-spacing: 0.03em;
     }
     .main-menu {
-        padding-left: 0;
+        padding-#{$left}: 0;
         & > li{
             list-style: none;
 
@@ -662,7 +662,7 @@ body {
                             content: "";
                             height: 7px;
                             position: absolute;
-                            right: -14px;
+                            #{$right}: -14px;
                             top: 6.5px;
                             width: 7px;
                         }
@@ -679,7 +679,7 @@ body {
                 }
                 & > .title{
                     i{
-                            margin-right: 6px;
+                            margin-#{$right}: 6px;
                             opacity: .9;
                         }
                 }
@@ -687,7 +687,7 @@ body {
         }
     }
     .sub-menu{
-        margin-left: 23px;
+        margin-#{$left}: 23px;
         li{
             list-style: none;
             padding: 0;
@@ -716,7 +716,7 @@ body {
     }
     &.light{
         background-color: #fff;
-        border-right: 1px solid $form-control-border-color;
+        border-#{$right}: 1px solid $form-control-border-color;
         .menu-title {
             color: fade($color-menu-light, 60%);
             opacity: 1;
@@ -762,14 +762,14 @@ body {
     position: relative;
     height: 100%;
     .split-list {
-        float: left;
+        float: $left;
         width: 360px;
         background: #fff;
         height: 100%;
         overflow-y: auto;
         position: relative;
         -webkit-overflow-scrolling: touch;
-        border-right: 1px solid $color-master-light;
+        border-#{$right}: 1px solid $color-master-light;
         @include transition(all .5s ease);
         .list-view-fake-header{
             font-size: 10.8px !important;
@@ -780,7 +780,7 @@ body {
         }
         .list-refresh{
             position: absolute;
-            right : 18px;
+            #{$right} : 18px;
             top: 4px;
             color: $color-master;
             opacity: .34;
@@ -796,7 +796,7 @@ body {
             font-family: 'Montserrat';
             text-transform: uppercase;
             font-size: 10.8px;
-            padding-left: 12px;
+            padding-#{$left}: 12px;
             padding-top: 6px;
             letter-spacing: 0.07em;
             width: 100%;
@@ -823,8 +823,8 @@ body {
                 padding-bottom: 2px;
             }
             .checkbox{
-                float: left;
-                clear: left;
+                float: $left;
+                clear: $left;
                 display: none;
                 max-width: 32px;
             }
@@ -850,7 +850,7 @@ body {
                 font-family: arial;
                 font-size: 11.1px;
                 position: absolute;
-                right: 20px;
+                #{$right}: 20px;
                 top: 15px;
                 opacity: 0.46;
             }
@@ -863,17 +863,17 @@ body {
         height: 100%;
         .no-result{
            bottom: 0;
-            left: 0;
+            #{$left}: 0;
             margin-top: -34px;
             opacity: 0.5;
             position: absolute;
-            right: 0;
+            #{$right}: 0;
             text-align:center;
             top: 50%;
         }
         .actions{
             height: 50px;
-            float: left;
+            float: $left;
             li{
                 list-style: none;
                 position: relative;
@@ -884,7 +884,7 @@ body {
                     content: "";
                     height: 14px;
                     position: absolute;
-                    right: -4px;
+                    #{$right}: -4px;
                     top: 18px;
                     width: 1px;
                     background: rgba(0,0,0,.07);
@@ -907,7 +907,7 @@ body {
     padding: 0px;
     overflow: auto;
     min-height: 100%;
-    margin-left: $secondary-sidebar-width;
+    margin-#{$left}: $secondary-sidebar-width;
 }
 
 /* Quick View
@@ -915,14 +915,14 @@ body {
 */
 .quickview-wrapper{
     position:fixed;
-    right:-$layout-right-quickview-width;
+    #{$right}:-$layout-right-quickview-width;
     top:0;
     width:$layout-right-quickview-width;
     background:#fff;
     bottom:0;
     z-index:1000;
     box-shadow:0 0 9px rgba(191,191,191,.36);
-    border-left: 1px solid rgba(222,227,231,.56);
+    border-#{$left}: 1px solid rgba(222,227,231,.56);
     -webkit-transition: -webkit-transform 400ms cubic-bezier($menu-bezier);
     transition: transform 400ms cubic-bezier($menu-bezier);
     -webkit-backface-visibility: hidden;
@@ -933,7 +933,7 @@ body {
     }
     .quickview-toggle{
         position: absolute;
-        right: 12px;
+        #{$right}: 12px;
         top: 2px;
         color: $color-menu-light;
         padding: 6px;
@@ -979,8 +979,8 @@ body {
         ~ .tab-content{
             position:absolute;
             padding: 0;
-            left: 0;
-            right: 0;
+            #{$left}: 0;
+            #{$right}: 0;
             top: 38px;
             bottom: 0;
             height: auto;
@@ -1026,8 +1026,8 @@ body {
                             background:transparent;
                             bottom: 8px;
                             display: block;
-                            left: 50%;
-                            margin-left: -40%;
+                            #{$left}: 50%;
+                            margin-#{$left}: -40%;
                             position: absolute;
                             width: 83%;
                             border:1px solid #968974;
@@ -1042,15 +1042,15 @@ body {
                             display:block;
                             clear:both;
                             .left{
-                                float:left;
+                                float:$left;
                                 width:65%;
                                 height:100%;
                                 padding-top:9px;
                                 .checkbox{
                                     display:none;
-                                    float:left;
+                                    float:$left;
                                     label{
-                                        margin-right:0;
+                                        margin-#{$right}:0;
                                         vertical-align:text-top;
                                     }
                                 }
@@ -1068,11 +1068,11 @@ body {
                             }
                             .right{
                                 font-size:10.5px;
-                                text-align:right;
+                                text-align:$right;
                                 width:35%;
                                 line-height: 41px;
                                 .date{
-                                    margin-right:10px;
+                                    margin-#{$right}:10px;
                                 }
                             }
                             &:hover{
@@ -1098,8 +1098,8 @@ body {
                         box-shadow: 0 1px 1px -1px rgba(0, 0, 0, 0.33);
                         & > li{
                             display:inline-block;
-                            border-right: 1px solid #EDECEC;
-                            float: left;
+                            border-#{$right}: 1px solid #EDECEC;
+                            float: $left;
                             line-height: 37px;
                             padding: 0;
                             text-align: center;
@@ -1130,7 +1130,7 @@ body {
                                 display:table;
                                 height:100%;
                                 width: 100%;
-                                padding:0 20px 0 45px;
+                                padding:side-values( 0 20px 0 45px );
                                 white-space: normal;
                             }
                             .top{
@@ -1140,9 +1140,9 @@ body {
                                 line-height:50px;
                                 text-align:center;
                                 & > a{
-                                    float:left;
+                                    float:$left;
                                     color:#b0b0a8;
-                                    margin-left:10px;
+                                    margin-#{$left}:10px;
                                 }
                                 & > span{
                                     font-style:italic;
@@ -1184,7 +1184,7 @@ body {
 .page-container {
     width:100%;
     height:100%;
-    padding-left: $layout-sidepanel-width-collapsed;
+    padding-#{$left}: $layout-sidepanel-width-collapsed;
     .page-content-wrapper{
         min-height: 100%;
         position: relative;
@@ -1202,7 +1202,7 @@ body {
                 display: inline-block;
                 vertical-align: top;
                 height: 100%;
-                padding-left: 30px;
+                padding-#{$left}: 30px;
                 position: relative;
             }
             &:only-child{
@@ -1215,10 +1215,10 @@ body {
         .footer{
             /* Footer */
             position: absolute;
-            left: 0;
-            right: 0;
+            #{$left}: 0;
+            #{$right}: 0;
             bottom: 0;
-            @include transition(left 0.3s ease);
+            @include transition($left 0.3s ease);
             &.fixed{
                 position: fixed;
             }
@@ -1261,15 +1261,15 @@ body {
           }
         }
         a {
-            margin-left: 5px;
-            margin-right: 5px;
+            margin-#{$left}: 5px;
+            margin-#{$right}: 5px;
             font-size: 10.5px !important;
             letter-spacing: 0.06em;
             font-weight: 400;
             color: #7b7d82;
         }
         .breadcrumb-item {
-            padding-left:0px;
+            padding-#{$left}:0px;
         }
         & > .breadcrumb-item{
             & + .breadcrumb-item{
@@ -1285,12 +1285,12 @@ body {
             &.active{
                 font-weight: 500;
                 color: #0090d9;
-                margin-left: 5px;
-                margin-right: 5px;
+                margin-#{$left}: 5px;
+                margin-#{$right}: 5px;
                 font-size: 10.5px !important;
                 letter-spacing: 0.06em;
                 &:before {
-                    padding-right: 10px;
+                    padding-#{$right}: 10px;
                 }
             }
         }
@@ -1300,19 +1300,19 @@ body {
 */
 .overlay{
   position:fixed;
-  left:0;
-  right:0;
+  #{$left}:0;
+  #{$right}:0;
   top:0;
   bottom:0;
   background:rgba(255,255,255,.95);
   z-index:1010;
-  padding-left: 64px;
+  padding-#{$left}: 64px;
   overflow:auto;
   .inline-block{
     display:inline-block;
   }
   .overlay-brand{
-    margin-left: 7px;
+    margin-#{$left}: 7px;
   }
   & > div{
     width:100%;
@@ -1330,11 +1330,11 @@ body {
     letter-spacing: -1.925px;
     line-height: 100px;
     width:100%;
-    padding-left:0 !important;
+    padding-#{$left}:0 !important;
   }
   .overlay-close{
   position:absolute;
-  right:20px;
+  #{$right}:20px;
   top:5px;
   }
 
@@ -1400,14 +1400,14 @@ body {
     &  > .scroll-element div {
         display: block;
         height: 100%;
-        left: 0;
+        #{$left}: 0;
         top: 0;
         width: 100%;
     }
     & > .scroll-element.scroll-x {
         bottom: 2px;
         height: 7px;
-        left: 0;
+        #{$left}: 0;
         min-width: 100%;
         width: 100%;
     }
@@ -1415,7 +1415,7 @@ body {
     & > .scroll-element.scroll-y {
         height: 100%;
         min-height: 100%;
-        right: 2px;
+        #{$right}: 2px;
         top: 0;
         width: 4px;
     }
@@ -1441,22 +1441,22 @@ body {
             .scroll-element_outer {
                 bottom: 0;
                 top: auto;
-                left: 2px;
+                #{$left}: 2px;
                 -webkit-transition: height 0.2s;
                 transition: height 0.2s;
             }
-            .scroll-element_size { left: -4px; }
+            .scroll-element_size { #{$left}: -4px; }
         }
         &.scroll-y{
              .scroll-bar {
-                left: auto;
+                #{$left}: auto;
                 min-height: 24px;
-                right: 0;
+                #{$right}: 0;
                 width: 4px;
             }
             .scroll-element_outer {
-                left: auto;
-                right: 0;
+                #{$left}: auto;
+                #{$right}: 0;
                 top: 2px;
                 -webkit-transition: all 0.2s;
                 transition: all 0.2s;
@@ -1476,7 +1476,7 @@ body {
     }
 }
 
-.scroll-wrapper > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size { left: -11px; }
+.scroll-wrapper > .scroll-element.scroll-x.scroll-scrolly_visible .scroll-element_size { #{$left}: -11px; }
 .scroll-wrapper > .scroll-element.scroll-y.scroll-scrollx_visible .scroll-element_size { top: -11px; }
 
 /* hover & drag */
@@ -1512,8 +1512,8 @@ body {
 /* Other overides */
 
 .container-fluid {
-padding-left: 30px;
-padding-right: 30px;
+padding-#{$left}: 30px;
+padding-#{$right}: 30px;
 
 }
 
@@ -1589,9 +1589,9 @@ padding-right: 30px;
         .header-inner {
             .brand.inline {
                 position: relative;
-                border-right: 1px solid #40444d;
-                padding-right: 15px;
-                margin-right: 0px;
+                border-#{$right}: 1px solid #40444d;
+                padding-#{$right}: 15px;
+                margin-#{$right}: 0px;
                 width: auto;
                 & > img {
                     width: auto;
@@ -1610,11 +1610,11 @@ padding-right: 30px;
             line-height: 21px;
             font-weight: normal;
             margin-bottom: 0;
-            margin-left: 15px;
+            margin-#{$left}: 15px;
         }
         .bubble{
             top: -3px;
-            right: -4px;
+            #{$right}: -4px;
         }
         .pg{
             color: $color-menu-light;
@@ -1636,7 +1636,7 @@ padding-right: 30px;
                     position: relative;
                     @include flex-inline();
                     @include align-items(center);
-                    padding-left: 15px;
+                    padding-#{$left}: 15px;
                     width: 23px;
                     &:before{
                         font-size: 16px;
@@ -1656,7 +1656,7 @@ padding-right: 30px;
                 line-height: 24px;
                 .sub-menu{
                     padding: 0;
-                    left: 50%;
+                    #{$left}: 50%;
                     top: 0;
                     position: absolute;
                     visibility: hidden;
@@ -1705,12 +1705,12 @@ padding-right: 30px;
                 position: relative;
                 &:first-child{
                     & > a{
-                        padding-left: 0;
+                        padding-#{$left}: 0;
                     }
                 }
                 &:last-child{
                     & > a {
-                        padding-right: 0;
+                        padding-#{$right}: 0;
                     }
                 }
                 & > a{
@@ -1722,7 +1722,7 @@ padding-right: 30px;
                     list-style: none;
                     border: 0;
                     top: -7px;
-                    left: -4px;
+                    #{$left}: -4px;
                     min-width: calc(100% + 4px);
                     padding: 0 $menu-padding;
                     padding-top: 60px;
@@ -1730,7 +1730,7 @@ padding-right: 30px;
                     background: #fff;
                     z-index: 1;
                     position: absolute;
-                    @cinlude box-shadow(0px 0px 16px 0px rgba(0, 0, 0, 0.08));
+                    @include box-shadow(0px 0px 16px 0px rgba(0, 0, 0, 0.08));
                 }
                 &.open{
                     //Level two and below
@@ -1745,7 +1745,7 @@ padding-right: 30px;
                             background-color: $form-control-border-color;
                         }
                         & > li{
-                            padding-left: 0;
+                            padding-#{$left}: 0;
                             @include translate3d(0, -10px, 0);
                             opacity: 1;
                             transition: all 0.18s ease;
@@ -1809,14 +1809,14 @@ padding-right: 30px;
         }
     }
     .page-container{
-        padding-left:0;
+        padding-#{$left}:0;
         .page-content-wrapper .content{
             padding-top: 0;
         }
     }
     .ghost-nav-dropdown{
         top: -7px;
-        left: -4px;
+        #{$left}: -4px;
         background: #fff;
         z-index: 1000;
         position: absolute;
@@ -1828,19 +1828,19 @@ padding-right: 30px;
     .calendar {
         .calendar-header{
             background-color: transparent;
-            padding-left: 0;
+            padding-#{$left}: 0;
             position: relative;
-            left: -20px;
+            #{$left}: -20px;
         }
         .months .month:first-child{
-            padding-left: 0;
+            padding-#{$left}: 0;
         }
         .weeks-wrapper{
-            margin-left:0;
-            padding-left: 0;
+            margin-#{$left}:0;
+            padding-#{$left}: 0;
         }
         .week-dragger{
-            margin-left:0;
+            margin-#{$left}:0;
         }
         .calendar-container .grid{
             overflow: hidden;
@@ -1857,8 +1857,8 @@ padding-right: 30px;
   .horizontal-menu-backdrop{
     background: rgba(0, 0, 0, .5);
     position: absolute;
-    left:0;
-    right:0;
+    #{$left}:0;
+    #{$right}:0;
     bottom: 0;
     top: 0;
     z-index: $zIndex-quickview - 1;
@@ -1876,7 +1876,7 @@ padding-right: 30px;
             bottom: 0;
             background-color: $color-menu;
             width: 270px;
-            right: -270px;
+            #{$right}: -270px;
             overflow-y: auto;
             -webkit-transition: -webkit-transform 400ms cubic-bezier($menu-bezier);
             transition: transform 400ms cubic-bezier($menu-bezier);
@@ -1892,10 +1892,10 @@ padding-right: 30px;
                 & > li{
                     a{
                         &:first-child{
-                            padding-left: 30px;
+                            padding-#{$left}: 30px;
                         }
                         &:last-child{
-                            padding-left: 35px;
+                            padding-#{$left}: 35px;
                         }
                     }
                 }
@@ -1917,13 +1917,13 @@ padding-right: 30px;
                     }
                     width: 100%;
                     a{
-                        padding-left: 35px !important;
+                        padding-#{$left}: 35px !important;
                         text-transform: uppercase;
                         font-family: 'Montserrat';
                         width: 100%;
                         line-height: 40px;
                         & > .arrow{
-                            float: right;
+                            float: $right;
                         }
                     }
                     &.active{
@@ -1933,7 +1933,7 @@ padding-right: 30px;
             }
         }
         &[data-pages-direction="slideRight"] {
-            right: 0;
+            #{$right}: 0;
         }
         .header .header-sm-height{
           height: 100%;
@@ -1948,7 +1948,7 @@ padding-right: 30px;
 @media (min-width: 980px){
 .horizontal-menu{
     .page-content {
-        margin-left: 0;
+        margin-#{$left}: 0;
         .content {
             padding-top: 123px;
         }

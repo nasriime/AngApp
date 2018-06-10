@@ -10,8 +10,8 @@
   &:after {
     background-size: cover;
     content: " ";
-    left: 0;
-    right: 0;
+    #{$left}: 0;
+    #{$right}: 0;
     top: 0;
     bottom: 0;
     position: absolute;
@@ -24,8 +24,8 @@
     background-image: url("#{$assets-url}/img/dashboard/pages_hero.jpg");
     background-size: cover;
     content: " ";
-    left: 0;
-    right: 0;
+    #{$left}: 0;
+    #{$right}: 0;
     top: 0;
     bottom: 0;
     position: absolute;
@@ -36,8 +36,8 @@
     background-image: url('#{$base-img-url}/linear_gradient.png');
     background-repeat: repeat-x;
     content: " ";
-    left: 0;
-    right: 0;
+    #{$left}: 0;
+    #{$right}: 0;
     height: 325px;
     bottom: 0;
     position: absolute;
@@ -97,7 +97,7 @@
   width: 100%;
   bottom: 0;
   position: absolute;
-  right: 0;
+  #{$right}: 0;
   &.line-chart .tick text,
   .line-chart .nvd3 .nv-axis .nv-axisMaxMin text {
     transform: translate(-10px, -32px);
@@ -121,8 +121,8 @@
   width: auto;
   bottom: 20px;
   position: absolute;
-  right: 20px;
-  left: 20px;
+  #{$right}: 20px;
+  #{$left}: 20px;
   top: 40px;
 }
 .widget-6 {
@@ -146,8 +146,8 @@
 }
 .widget-7-chart {
   top: 0;
-  left: 0;
-  right: 0;
+  #{$left}: 0;
+  #{$right}: 0;
   bottom: 0;
   position: absolute;
   &.line-chart[data-points="true"] .nvd3.nv-line .nvd3.nv-scatter .nv-groups .nv-point {
@@ -169,7 +169,7 @@
   width: 50%;
   bottom: 0;
   position: absolute;
-  right: 0;
+  #{$right}: 0;
   .line-chart[data-points="true"] .nvd3.nv-line .nvd3.nv-scatter .nv-groups .nv-point {
     stroke-opacity: 0.3;
   }
@@ -195,7 +195,7 @@
 }
 .widget-11 {
   sup {
-    margin-right: -4px;
+    margin-#{$right}: -4px;
   }
   .widget-11-table{
     height:380px; 
@@ -206,7 +206,7 @@
 }
 .widget-11-2 {
   sup {
-    margin-right: -4px;
+    margin-#{$right}: -4px;
   }
   .widget-11-2-table{
     height:273px;
@@ -250,7 +250,7 @@
   background: rgba(255,  255,  255, .8);
   bottom: 0;
   width: 35px;
-  left: 0;
+  #{$left}: 0;
   z-index: 2;
   .rickshaw_graph .y_ticks path,
   .rickshaw_graph .x_ticks_d3 path {
@@ -268,7 +268,7 @@
   }
 }
 .widget-14-chart-legend .ui-sortable li {
-  padding-right: 0;
+  padding-#{$right}: 0;
   .action {
     display: none;
   }
@@ -326,13 +326,13 @@
   height: 18px;
   display: inline-block;
   vertical-align: middle;
-  margin-right: 4px;
+  margin-#{$right}: 4px;
   i {
     font-size: 11px;
     position: absolute;
-    left: 50%;
+    #{$left}: 50%;
     top: 50%;
-    margin-left: -5px;
+    margin-#{$left}: -5px;
     margin-top: -4px;
   }
 }
@@ -375,8 +375,8 @@
 #widgetDetails {
   .progress-circle-indeterminate{
     position: absolute;
-    left: 50%;
-    margin-left: -19px;
+    #{$left}: 50%;
+    margin-#{$left}: -19px;
     top: 50%;
     margin-top: -19px;
   }
@@ -411,8 +411,8 @@
     &:before{
       position: absolute;
       content: "";
-      left: 0;
-      right: 0;
+      #{$left}: 0;
+      #{$right}: 0;
       top: 0;
       bottom: 0;
       background-image: linear-gradient(rgba(255,255,255,0), rgba(255,255,255,.8) 70%);
@@ -423,8 +423,8 @@
     &:after{
       position: absolute;
       content: "";
-      left: 0;
-      right: 0;
+      #{$left}: 0;
+      #{$right}: 0;
       top: 0;
       bottom: 0;
       background: #fff;

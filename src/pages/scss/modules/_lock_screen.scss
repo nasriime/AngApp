@@ -3,8 +3,8 @@
 */
 
 .lock-container{
-    margin-left: auto;
-    margin-right: auto;
+    margin-#{$left}: auto;
+    margin-#{$right}: auto;
     width: 600px;
 }
 
@@ -44,8 +44,8 @@
             text-align: center;
             position: relative;
             .brand {
-                left: 50%;
-                margin-left: -21px;
+                #{$left}: 50%;
+                margin-#{$left}: -21px;
                 margin-top: -5px;
                 position: absolute;
                 top: 50%;
@@ -78,7 +78,7 @@
             position: static;
             margin-top: 100px;
             width: 100%;
-            float: left;
+            float: $left;
             clear: both;
             & > div {
                 text-align: center;

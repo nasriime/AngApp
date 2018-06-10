@@ -4,7 +4,7 @@
 .modal{
 	.close {
 	    position: absolute;
-	    right: 25px;
+	    #{$right}: 25px;
 	    top: 15px;
 	}
 	.close:focus {
@@ -168,8 +168,8 @@
 			.close{
 				position: absolute;
 				top:0;
-				right: 0;
-				margin-right: 10px;
+				#{$right}: 0;
+				margin-#{$right}: 10px;
 				z-index: 10;
 			}
 			// &.in{
@@ -184,7 +184,7 @@
 			}
 			.modal-dialog{
 				position: absolute;
-				right: 0;
+				#{$right}: 0;
 				margin:0;
 				height: 100%;
 				@include translate3d(100%,0,0);

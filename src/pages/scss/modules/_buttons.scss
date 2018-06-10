@@ -103,9 +103,9 @@
         color: #333;
     }
     .caret {
-        margin-left: 3px;
+        margin-#{$left}: 3px;
         &.single {
-            margin-left: 0px;
+            margin-#{$left}: 0px;
         }
     }
     &:hover,
@@ -185,11 +185,11 @@ Alternate buttons
 .btn-file input[type=file] {
     position: absolute;
     top: 0;
-    right: 0;
+    #{$right}: 0;
     min-width: 100%;
     min-height: 100%;
     font-size: 100px;
-    text-align: right;
+    text-align: $right;
     filter: alpha(opacity=0);
     opacity: 0;
     background: red;
@@ -202,15 +202,15 @@ Button Sizes
 */
 
 .btn-lg, .btn-group-lg > .btn{
-    padding-left: $padding-lg-horizontal;
-    padding-right: $padding-lg-horizontal;
+    padding-#{$left}: $padding-lg-horizontal;
+    padding-#{$right}: $padding-lg-horizontal;
     line-height: 22px;
     padding-top: 10px;
     padding-bottom: 10px;
 }
 .btn-sm, .btn-group-sm > .btn{
-    padding-left: $padding-sm-horizontal;
-    padding-right: $padding-sm-horizontal;
+    padding-#{$left}: $padding-sm-horizontal;
+    padding-#{$right}: $padding-sm-horizontal;
     font-size: 11.9px;
     line-height: 20px;
 }
@@ -219,7 +219,7 @@ Button Sizes
     font-size: 10.5px;
 }
 .btn-cons {
-    margin-right: 5px;
+    margin-#{$right}: 5px;
     min-width: 120px;
 }
 
@@ -248,8 +248,8 @@ Rounded buttons
 .dropdown-default{
     display: inline-block;
     &.toggle-only{
-        padding-left: 9px;
-        padding-right: 9px;
+        padding-#{$left}: 9px;
+        padding-#{$right}: 9px;
         &:after{
             position: initial;
         }
@@ -343,7 +343,7 @@ Rounded buttons
         }
         .dropdown-menu{
             margin-bottom: -40px;
-            padding: 0 3px 44px 0 !important;
+            padding: side-values(0 3px 44px 0) !important;
             transform-origin: center bottom 0;
             &:after{
                 bottom: 43px;
@@ -352,12 +352,12 @@ Rounded buttons
         }
     }
     .btn.dropdown-toggle{
-        text-align: left;
-        padding-right: $padding-base-horizontal + 10px;
+        text-align: $left;
+        padding-#{$right}: $padding-base-horizontal + 10px;
         &.btn-lg{
-            padding-right: $padding-lg-horizontal + 14px;
+            padding-#{$right}: $padding-lg-horizontal + 14px;
             &:after{
-                right: 26px;
+                #{$right}: 26px;
             }
             & + .dropdown-menu{
                 margin-top: -47px;
@@ -368,9 +368,9 @@ Rounded buttons
             }
         }
         &.btn-sm{
-            padding-right: $padding-sm-horizontal + 10px;
+            padding-#{$right}: $padding-sm-horizontal + 10px;
             &:after{
-                right: 16px;
+                #{$right}: 16px;
             }
             & + .dropdown-menu{
                 margin-top: -34px;
@@ -381,9 +381,9 @@ Rounded buttons
             }
         }
         &.btn-xs{
-            padding-right: $padding-xs-horizontal + 12px;
+            padding-#{$right}: $padding-xs-horizontal + 12px;
             &:after{
-                right: 8px;
+                #{$right}: 8px;
             }
             & + .dropdown-menu{
                 margin-top: -29px;
@@ -395,14 +395,14 @@ Rounded buttons
         }
         &:after{
             position: absolute;
-            right: 15px;
+            #{$right}: 15px;
             top:50%;
             margin-top: -2px;
         }
     }
     .btn-rounded{
-        padding-left: 17px;
-        padding-right: 17px;
+        padding-#{$left}: 17px;
+        padding-#{$right}: 17px;
     }
     .btn-rounded + .dropdown-menu{
         border-radius: 17px;
@@ -422,7 +422,7 @@ Rounded buttons
             content: "";
             position: absolute;
             height: 1px;
-            left: 0;
+            #{$left}: 0;
             top: 42px;
             background: $color-master-light;
             width: 100%;
@@ -436,7 +436,7 @@ Rounded buttons
 .dropdown-toggle{
     &:after{
             position: absolute;
-            right: 15px;
+            #{$right}: 15px;
             top: 50%;
             margin-top: -2px;
     }
@@ -445,7 +445,7 @@ Rounded buttons
 .dropdown-menu {
     position: absolute;
     display: none;
-    float: left;
+    float: $left;
     list-style: none;
     text-shadow: none;
     @include box-shadow(0px 0px 5px fade-out($color-master, .8));
@@ -463,7 +463,7 @@ Rounded buttons
         border-bottom: 0px;
     }
     & > .dropdown-item {
-        padding-left: 0px;
+        padding-#{$left}: 0px;
         line-height: 35px;
         color: $color-master;
         padding: 0 20px;
@@ -471,7 +471,7 @@ Rounded buttons
         display: block;
         clear: both;
         white-space: nowrap;
-        text-align:left;
+        text-align:$left;
         &:hover, &:focus{
             color: $color-master-darker;
             text-decoration: none;
@@ -544,7 +544,7 @@ Animated buttons
     }
     &.from-top{
         &:before{
-            left: 0;
+            #{$left}: 0;
             top: -100%;
         }
         &:hover, &.show-icon{
@@ -558,12 +558,12 @@ Animated buttons
     }
     &.from-left{
         &:before{
-            left: -100%;
+            #{$left}: -100%;
             top: 0;
         }
         &:hover, &.show-icon{
             &:before{
-            left: 0;
+            #{$left}: 0;
             }
             & > span{
                 @include translateX(200%);
@@ -589,7 +589,7 @@ Tag buttons
 
 .btn-tag{
     line-height: 17px;
-    border-radius: 17px 3px 3px 17px;
+    border-radius: corner-values(17px 3px 3px 17px);
     padding: 5px 19px;
     &:hover, &.hover{
         border-color:transparent;
@@ -619,8 +619,8 @@ Misc buttons
 --------------------------------------------------
 */
 .btn-toolbar .btn{
-    padding-left:14px;
-    padding-right: 14px;
+    padding-#{$left}:14px;
+    padding-#{$right}: 14px;
 }
 
 .pager .disabled{

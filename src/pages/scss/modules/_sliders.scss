@@ -33,7 +33,7 @@ https://github.com/IonDen/ion.rangeSlider
 		
 		&.from:before{
 			top: -2%;
-			left: 37%;
+			#{$left}: 37%;
 			width: 16%;
 			height: 100%;
 			background: rgba(0,0,0,0.0);
@@ -41,7 +41,7 @@ https://github.com/IonDen/ion.rangeSlider
 		}	
 		&.to:before{
 			top: -2%;
-			left: 37%;
+			#{$left}: 37%;
 			width: 16%;
 			height: 100%;
 			background: rgba(0,0,0,0.0);
@@ -49,7 +49,7 @@ https://github.com/IonDen/ion.rangeSlider
 		}
 		&.single:before{
 			top: -2%;
-			left: 37%;
+			#{$left}: 37%;
 			width: 16%;
 			height: 100%;
 			background: rgba(0,0,0,0.0);
@@ -247,7 +247,7 @@ http://refreshless.com/nouislider/
 	.noUi-handle{
 	width: 18px;
 	height: 18px;
-	left: -15px;
+	#{$left}: -15px;
 	border: 1px solid mix($color-master, #fff, 23%);
 	top: -7px;
 	@include transition(all 0.2s ease);

@@ -10,9 +10,9 @@
 	overflow: hidden;
 	.navbar{
 		border-radius: 0;
-		padding-left: 0;
+		padding-#{$left}: 0;
 		margin-bottom:0;
-		border-left: 0;
+		border-#{$left}: 0;
 		display: table;
 		width: 100%;
 		top: 0;
@@ -30,7 +30,7 @@
 			line-height: 50px;
 			z-index: 1;
 			&.pull-right{
-				right: 0;
+				#{$right}: 0;
 			}
 		}
 		.view-heading{
@@ -73,7 +73,7 @@
 			}
 		}
 		&:last-child{
-			margin-left: -4px
+			margin-#{$left}: -4px
 		}
 		&:only-child{
 			margin: 0;

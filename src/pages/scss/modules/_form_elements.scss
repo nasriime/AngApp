@@ -88,7 +88,7 @@ input[type="checkbox"]:focus {
 }
 
 form legend {
-    margin: 15px 0px 10px 0px;
+    margin: side-values(15px 0px 10px 0px);
 }
 
 .form-control {
@@ -192,15 +192,15 @@ form legend {
 .checkbox {
     margin-bottom: 10px;
     margin-top: 10px;
-    padding-left: 0px;
+    padding-#{$left}: 0px;
     label{
         display: inline-block;
         cursor: pointer;
         position: relative;
-        padding-left: 25px;
+        padding-#{$left}: 25px;
         min-width: 17px;
         min-height: 17px;
-        margin-right: 15px;
+        margin-#{$right}: 15px;
         font-size: 13px;
         &:before{
             -webkit-box-sizing: inherit;
@@ -209,9 +209,9 @@ form legend {
             display: inline-block;
             width: 17px;
             height: 17px;
-            margin-right: 10px;
+            margin-#{$right}: 10px;
             position: absolute;
-            left: 0px;
+            #{$left}: 0px;
             background-color: $color-white;
             border: 1px solid mix($color-master, #fff, 30%);
         }
@@ -301,7 +301,7 @@ input[type=radio]:checked + label:before{
             width: 16px;
             height: 16px;
             position: absolute;
-            left: 3.5px;
+            #{$left}: 3.5px;
             top: 0px;
             font-size: 11px;
             transition: border 0.2s linear 0s, color 0.2s linear 0s;
@@ -356,24 +356,24 @@ input[type=radio]:checked + label:before{
     }
     &.right {
         label {
-            margin-right: 35px;
-            padding-left:0 !important;
+            margin-#{$right}: 35px;
+            padding-#{$left}:0 !important;
             &:before {
-                right:-35px;
-                left:auto;
+                #{$right}:-35px;
+                #{$left}:auto;
                
             }
         }
         input[type=checkbox]:checked {
             & + label {
                 position: relative;
-                // margin-right: 0;
+                // margin-#{$right}: 0;
                 &::after {
                     font-family:'FontAwesome';
                     content:"\F00C";
                     position: absolute;
-                    right: -27px;
-                    left: auto;
+                    #{$right}: -27px;
+                    #{$left}: auto;
                 }
             }
         }
@@ -426,22 +426,22 @@ input[type=checkbox]:checked + label{
 @media only screen and (min-width: 768px) {
     form{
         .row {
-          margin-left: 0;
-          margin-right: 0;
+          margin-#{$left}: 0;
+          margin-#{$right}: 0;
         }
         .row [class*='col-']{
 
             &:not(:first-child),
             &:not(:last-child) {
-                padding-right: 7px;
-                padding-left: 7px;
+                padding-#{$right}: 7px;
+                padding-#{$left}: 7px;
             }
 
             &:first-child{
-                padding-left: 0;
+                padding-#{$left}: 0;
             }
             &:last-child{
-                padding-right: 0;
+                padding-#{$right}: 0;
             }
         }  
     }
@@ -449,8 +449,8 @@ input[type=checkbox]:checked + label{
 @media (min-width: 768px) and (max-width: 991px){
   // form .row [class*="col-md-"]:not(:first-child), 
   // form .row [class*="col-md-"]:not(:last-child){
-  //   padding-right: 0;
-  //   padding-left: 0;
+  //   padding-#{$right}: 0;
+  //   padding-#{$left}: 0;
   // }
 }
 /* Form layouts  : Horizontal
@@ -472,7 +472,7 @@ input[type=checkbox]:checked + label{
             opacity: 1;
         }
         .control-label{
-            text-align: left;
+            text-align: $left;
             opacity: .42;
             @include transition(opacity ease .3s);
         }
@@ -500,38 +500,38 @@ input[type=checkbox]:checked + label{
         &:first-child{
             &.row > [class*='col-']{
                 &:first-child .form-group-default{
-                    border-top-left-radius: 2px;
+                    border-top-#{$left}-radius: 2px;
                 }
                 &:last-child .form-group-default{
-                    border-top-right-radius: 2px;
+                    border-top-#{$right}-radius: 2px;
                 }
             } 
             &.form-group-default{
-                border-top-left-radius: 2px;
-                border-top-right-radius: 2px;
+                border-top-#{$left}-radius: 2px;
+                border-top-#{$right}-radius: 2px;
             }
         }
        
         &:last-child{ 
             &.row > [class*='col-']{
                 &:first-child .form-group-default{
-                    border-bottom-left-radius: 2px;
+                    border-bottom-#{$left}-radius: 2px;
                 }
                 &:last-child .form-group-default{
-                    border-bottom-right-radius: 2px;
+                    border-bottom-#{$right}-radius: 2px;
                 }
             } 
             &.form-group-default{
-                border-bottom-left-radius: 2px;
-                border-bottom-right-radius: 2px;
+                border-bottom-#{$left}-radius: 2px;
+                border-bottom-#{$right}-radius: 2px;
             }
         }
         &.row > [class*='col-']{
-            padding-right: 0 !important;
-            padding-left: 0 !important;
+            padding-#{$right}: 0 !important;
+            padding-#{$left}: 0 !important;
         }
         &.row > [class*='col-']:not(:only-child):not(:last-child) > .form-group-default{
-            border-right-color: transparent;
+            border-#{$right}-color: transparent;
         }
         &:not(:last-child) .form-group-default, 
         &:not(:last-child).form-group-default{
@@ -546,7 +546,7 @@ input[type=checkbox]:checked + label{
 */
 @media (max-width: 767px) {
     .form-group-attached .form-group-default{
-        border-right-color: $form-control-border-color !important;
+        border-#{$right}-color: $form-control-border-color !important;
     }
 }
 
@@ -573,7 +573,7 @@ input[type=checkbox]:checked + label{
         font-weight: 500;
     }
     label .help{
-        margin-left: 8px;
+        margin-#{$left}: 8px;
      
     }
     .help {
@@ -588,8 +588,8 @@ input[type=checkbox]:checked + label{
     border: 1px solid $form-control-border-color;
     border-radius: 2px;
     padding-top: 7px;
-    padding-left: 12px;
-    padding-right: 12px;
+    padding-#{$left}: 12px;
+    padding-#{$right}: 12px;
     padding-bottom: 4px;
     overflow: hidden;
     width: 100%;
@@ -600,7 +600,7 @@ input[type=checkbox]:checked + label{
         font-family: arial;
         font-size: 20px;
         position: absolute;
-        right: 15px;
+        #{$right}: 15px;
         top: 9px;
     }
     &.disabled {
@@ -643,16 +643,16 @@ input[type=checkbox]:checked + label{
         padding: 0;
         & > label{
             margin-top: 6px;
-            padding-left: 12px;
+            padding-#{$left}: 12px;
             &.inline{
                 margin-top: 6px;
-                float: left;
+                float: $left;
             }
         }
         & > .form-control{
            margin-top: -2px;
            margin-bottom: 3px;
-           padding-left: 12px;
+           padding-#{$left}: 12px;
         }
         .input-group-addon{
             height: calc(#{$form-group-height} - 4px);
@@ -690,12 +690,12 @@ input[type=checkbox]:checked + label{
         @include transition(opacity .2s ease);
         &.label-lg {
             font-size: 13px;
-            left: 13px;
+            #{$left}: 13px;
             top: 9px;
         }
         &.label-sm {
             font-size: 11px;
-            left: 11px;
+            #{$left}: 11px;
             top: 6px;
         }
         &.highlight{
@@ -709,7 +709,7 @@ input[type=checkbox]:checked + label{
     & > .input-lg {
         height: 29px;
         min-height: 29px;
-        padding-left: 1px;
+        padding-#{$left}: 1px;
     }
     & > .input-sm {
         min-height: 18px;
@@ -729,13 +729,13 @@ input[type=checkbox]:checked + label{
         & > label{
             position: absolute;
             z-index: 10;
-            padding:7px 12px 0 12px;
+            padding:side-values(7px 12px 0 12px);
             &.label-lg{
-                left:0;
+                #{$left}:0;
                 top: 0;
             }
             &.label-sm{
-                left:0;
+                #{$left}:0;
                 top: 0;                
             }
         }
@@ -747,7 +747,7 @@ input[type=checkbox]:checked + label{
                     top: 20px;
                 }
                 .select2-chosen{
-                    padding-left:3px;
+                    padding-#{$left}:3px;
                     padding-top: 1px;
                 }
             }
@@ -788,13 +788,13 @@ input[type=checkbox]:checked + label{
         & > label{
             position: absolute;
             z-index: 10;
-            padding: 7px 12px 0 12px;
+            padding: side-values(7px 12px 0 12px);
             &.label-lg{
-                left: 0;
+                #{$left}: 0;
                 top: 0;
             }
             &.label-sm{
-                left: 0;
+                #{$left}: 0;
                 top: 0;                
             }
         }
@@ -802,7 +802,7 @@ input[type=checkbox]:checked + label{
             .cs-placeholder{
                 padding-top: 28px;
                 height: 52px;
-                padding-left: 12px;
+                padding-#{$left}: 12px;
             }
             .cs-select{
                 height: auto;
@@ -901,7 +901,7 @@ input[type=checkbox]:checked + label{
     }
     .arrow {
         position: relative;
-        right: -6px;
+        #{$right}: -6px;
         color: #D1DADE;
         z-index: 100;
         &:before {
@@ -909,7 +909,7 @@ input[type=checkbox]:checked + label{
             content:"\f0da";
             font-size: 23px;
             position: absolute;
-            left: 17px;
+            #{$left}: 17px;
             top: -2px;
         }
     }
@@ -920,12 +920,12 @@ input[type=checkbox]:checked + label{
                 content:"\f0d9";
                 font-size: 23px;
                 position: absolute;
-                left: -23px;
+                #{$left}: -23px;
                 top: -2px;
             }
         }
         input {
-            border-left: 0px;
+            border-#{$left}: 0px;
         }
     }
 }
@@ -1130,30 +1130,30 @@ select.full-width + .select2-container {
         transition: border 0.2s linear 0s;
         .select2-selection__rendered {
             padding: 0;
-            padding-left: 3px;
+            padding-#{$left}: 3px;
             padding-top: 1px;
         }
         .select2-selection__arrow {
             top: auto;
             bottom: 5px;
-            right: 10px !important;
-            left:auto;
+            #{$right}: 10px !important;
+            #{$left}:auto;
             background: transparent;
-            border-left: 0px;
+            border-#{$left}: 0px;
             @include transition(all 0.3s ease);
         }
         &.select2-selection--single {
             height: 35px;
         }
         & > .select2-chosen{
-            margin-right:26px;
-            margin-left:0;
+            margin-#{$right}:26px;
+            margin-#{$left}:0;
         }
     }
     &.select2-drop-above {
         .select2-choice {
-            border-bottom-right-radius: 2px;
-            border-bottom-left-radius: 2px;
+            border-bottom-#{$right}-radius: 2px;
+            border-bottom-#{$left}-radius: 2px;
         }
     }
 }
@@ -1191,8 +1191,8 @@ select.full-width + .select2-container {
     border-radius: 2px;
     padding-top: 0px;
     &.select2-drop-above {
-        border-top-left-radius: 2px;
-        border-top-right-radius: 2px;
+        border-top-#{$left}-radius: 2px;
+        border-top-#{$right}-radius: 2px;
         box-shadow: none;
         // &.select2-drop-active {
         // }
@@ -1202,12 +1202,12 @@ select.full-width + .select2-container {
     box-shadow: none;
     border: 1px solid $form-control-border-color;
     background: $color-master-lighter;
-    border-top-left-radius: 2px;
-    border-top-right-radius: 2px;
+    border-top-#{$left}-radius: 2px;
+    border-top-#{$right}-radius: 2px;
 }
 .select2-search--dropdown {
-    padding-left: 8px;
-    padding-right: 8px;
+    padding-#{$left}: 8px;
+    padding-#{$right}: 8px;
     padding-top: 4px;
     input {
         background: $color-white !important;
@@ -1220,7 +1220,7 @@ select.full-width + .select2-container {
     }
 }
 .select2-results {
-    margin: 3px 8px 10px 8px;
+    margin: side-values(3px 8px 10px 8px);
     li {
         color: $color-master;
         &.select2-result-with-children {
@@ -1243,7 +1243,7 @@ select.full-width + .select2-container {
         background: none;
         color: $color-master;
         font-size: 12px;
-        padding-left:8px;
+        padding-#{$left}:8px;
         padding-top: 0px;
         position: relative;
         top: -5px;
@@ -1252,8 +1252,8 @@ select.full-width + .select2-container {
 
 .select2-dropdown {
     border: 1px solid  $form-control-border-color;
-    border-bottom-right-radius: 2px;
-    border-bottom-left-radius: 2px;
+    border-bottom-#{$right}-radius: 2px;
+    border-bottom-#{$left}-radius: 2px;
     padding-top: 5px;
     z-index: $zIndex-navbar - 10;
     box-shadow: 0 4px 5px rgba(0, 0, 0, .15);
@@ -1271,20 +1271,20 @@ select.full-width + .select2-container {
             box-shadow: none;
             color: inherit;
             border-radius: 8px;
-            margin: 6px -5px 0px 10px;
-            padding: 0 8px 0 7px;
+            margin: side-values(6px -5px 0px 10px);
+            padding: side-values(0 8px 0 7px);
             line-height: 21px;
             &:first-child {
-                margin-left: 0;
+                margin-#{$left}: 0;
             }
             .select2-selection__choice__remove {
                 color: #626262;
                 font-weight: 900;
-                margin-right: 4px;
+                margin-#{$right}: 4px;
             }
         }
         .select2-search--inline {
-            margin-left: 8px;
+            margin-#{$left}: 8px;
         }
     }
     &.select2-container-active {
@@ -1294,13 +1294,13 @@ select.full-width + .select2-container {
         }
     }
     .select2-search-choice-close {
-        left:6px;
+        #{$left}:6px;
     }
 }
 .select2-search-choice-close {
     background: none;
     top: 4px;
-    right:0;
+    #{$right}:0;
     &:hover {
         text-decoration: none;
     }
@@ -1359,11 +1359,11 @@ select.full-width + .select2-container {
 .dropdown-mask{
     bottom: 0;
     display: none;
-    left: 0;
+    #{$left}: 0;
     outline: 0 none;
     overflow: hidden;
     position: fixed;
-    right: 0;
+    #{$right}: 0;
     top: 0;
     z-index: $zIndex-dropdownMask;
 }
@@ -1374,12 +1374,12 @@ https://github.com/timschlechter/bootstrap-tagsinput
 .form-group-default {
     .bootstrap-tagsinput{
         border:0px;
-        padding-left:0;
+        padding-#{$left}:0;
         margin-bottom: 0;
         padding-top: 0;
         vertical-align: top;
         padding-bottom: 0px;
-        padding-left:0;
+        padding-#{$left}:0;
         margin-top: -3px;
         .tag{
             padding: 2px 9px;
@@ -1389,13 +1389,13 @@ https://github.com/timschlechter/bootstrap-tagsinput
                 display: inline-block;
                 vertical-align: top;
             }
-            margin-left: 0;
-            margin-right: 2px;
+            margin-#{$left}: 0;
+            margin-#{$right}: 2px;
         }
         input{
             min-height: 20px;
             &:first-child{
-                margin-left: 0;
+                margin-#{$left}: 0;
             }        
         }
     }
@@ -1412,7 +1412,7 @@ https://github.com/timschlechter/bootstrap-tagsinput
     border-radius: 4px;
     padding: 0;
     padding-top: 5px;
-    padding-right:5px;
+    padding-#{$right}:5px;
     @include box-shadow(none);
     width: 100%;
     @include transition(background 0.2s linear 0s);
@@ -1423,7 +1423,7 @@ https://github.com/timschlechter/bootstrap-tagsinput
         border: none;
         margin: 5px;
         margin-top: 0;
-        margin-right:0;
+        margin-#{$right}:0;
         min-height: 25px;
         min-width: 10em !important;
         -webkit-box-flex: 1;
@@ -1436,7 +1436,7 @@ https://github.com/timschlechter/bootstrap-tagsinput
     }
     .tag {
         padding: 3px 9px;
-        padding-right:6px;
+        padding-#{$right}:6px;
         border-radius: 3px;
         line-height: 18px;
         -webkit-box-flex: 1;
@@ -1444,15 +1444,15 @@ https://github.com/timschlechter/bootstrap-tagsinput
         flex: 1 0 auto;
         margin: 5px;
         margin-top: 0;
-        margin-right:0;
+        margin-#{$right}:0;
         //Older browsers
         -webkit-flex-shrink:0;
         -webkit-flex-grow: 1;
         -webkit-flex-basis: auto;
     }
     .tag [data-role="remove"]{
-        margin-left: 4px;
-        float: right;
+        margin-#{$left}: 4px;
+        float: $right;
         vertical-align: middle;
     }
     .tag[data-role="remove"]:hover:active,
@@ -1474,15 +1474,15 @@ https://github.com/Waxolunist/bootstrap3-wysihtml5-bower
     .wysihtml5-toolbar {
         position: absolute;
         bottom: 0;
-        left: 0;
-        right: 0;
+        #{$left}: 0;
+        #{$right}: 0;
         /*height: 50px;*/
         background: $color-master-lighter;
         border-top:1px solid $color-master-light;
         .btn {
             background: none repeat scroll 0 0 rgba(0, 0, 0, 0);
             border-color:transparent;
-            border-right-color: $color-master-light;
+            border-#{$right}-color: $color-master-light;
             color: #A5A5A5;
             font-size: 16px;
             font-weight: 600;
@@ -1499,8 +1499,8 @@ https://github.com/Waxolunist/bootstrap3-wysihtml5-bower
                 opacity: 1;
             }
             &.dropdown-toggle {
-                padding-left: 10px;
-                padding-right: 20px;
+                padding-#{$left}: 10px;
+                padding-#{$right}: 20px;
                 .current-font {
                     opacity: .5;
                     font-size: 14px;
@@ -1534,7 +1534,7 @@ https://github.com/Waxolunist/bootstrap3-wysihtml5-bower
         line-height: 50px;
         padding: 0 15px;
         position: absolute;
-        right: 0;
+        #{$right}: 0;
     }
     .wysihtml5-sandbox{
         border: none !important;
@@ -1547,7 +1547,7 @@ https://github.com/Waxolunist/bootstrap3-wysihtml5-bower
 }
 .toggle-wysiwyg {
     position: absolute;
-    right: 15px;
+    #{$right}: 15px;
     top: 0;
     li {
         display: inline-block;
@@ -1612,7 +1612,7 @@ https://github.com/HackerWins/summernote
             background-color: $color-master-lighter;
             border-bottom: none;
             .btn-group{
-                margin: 0 -1px 0 0;
+                margin: side-values(0 -1px 0 0);
                 .btn{
                     font-size: 12px;
                     font-weight: 600;
@@ -1623,7 +1623,7 @@ https://github.com/HackerWins/summernote
                     border-radius: 0;
                     background-color: $color-master-lighter;
                     border-color: transparent;
-                    border-right-color: $color-master-light;
+                    border-#{$right}-color: $color-master-light;
                     border-bottom-color: $color-master-light;
                     color: $color-master;
                     &.active, &:active{
@@ -1633,7 +1633,7 @@ https://github.com/HackerWins/summernote
                         min-width: 61px;
                     }
                     &:not(:last-child), &:not(:only-child){
-                        margin-right: 1px;
+                        margin-#{$right}: 1px;
                     }
                 }
             }
@@ -1679,7 +1679,7 @@ div.cs-select {
     display: inline-block;
     vertical-align: middle;
     position: relative;
-    text-align: left;
+    text-align: $left;
     background: #fff;
     width: 100%;
     max-width: 500px;
@@ -1711,7 +1711,7 @@ div.cs-select:focus {
 
 /* Placeholder and selected option */
 .cs-select > span {
-    padding-right: 3em;
+    padding-#{$right}: 3em;
 }
 
 .cs-select > span::after,
@@ -1727,12 +1727,12 @@ div.cs-select:focus {
 
 .cs-select > span::after {
     content: '\25BE';
-    right: 1em;
+    #{$right}: 1em;
 }
 
 .cs-select .cs-selected span::after {
     content: '\2713';
-    margin-left: 1em;
+    margin-#{$left}: 1em;
 }
 
 .cs-select.cs-active > span::after {
@@ -1770,7 +1770,7 @@ div.cs-select:focus {
 
 /* Optgroup and optgroup label */
 .cs-select li.cs-optgroup ul {
-    padding-left: 1em;
+    padding-#{$left}: 1em;
 }
 
 .cs-select li.cs-optgroup > span {
@@ -1797,7 +1797,7 @@ div.cs-skin-slide::before {
     width: 100%;
     height: 100%;
     top: 0;
-    left: 0;
+    #{$left}: 0;
     -webkit-backface-visibility: hidden;
     backface-visibility: hidden;
     -webkit-transition: -webkit-transform 0.3s;
@@ -1836,7 +1836,7 @@ div.cs-skin-slide::before {
     height: 400%;
     padding: 1.9em 0;
     top: 50%;
-    left: 50%;
+    #{$left}: 50%;
     -webkit-transform: translate3d(-50%,-50%,0);
     transform: translate3d(-50%,-50%,0);
 }
@@ -1889,7 +1889,7 @@ div.cs-skin-slide::before {
     font-weight: 500;
     letter-spacing: 2px;
     font-size: 65%;
-    padding: 0.8em 1em 0.8em 2.5em;
+    padding: side-values(0.8em 1em 0.8em 2.5em);
 }
 
 .cs-skin-slide .cs-options li span:hover,
@@ -1907,7 +1907,7 @@ div.cs-skin-slide::before {
 /* Pages Select  overriding */
 
 .form-group-default .cs-skin-slide > span{
-    padding: 0 30px 0 0;
+    padding: side-values(0 30px 0 0);
     height: 22px;
     line-height: 21px;
 }
@@ -1956,7 +1956,7 @@ div.cs-skin-slide{
     }
     & > span{
         height: 35px;
-        padding: 6px 33px 6px 17px;
+        padding: side-values(6px 33px 6px 17px);
         line-height: 23px;
         z-index: 1;
     }
@@ -2015,9 +2015,9 @@ div.cs-skin-slide{
     background: none repeat scroll 0 0 #fff;
     border: 1px solid $form-control-border-color;
     bottom: 0;
-    left: 0;
+    #{$left}: 0;
     position: absolute;
-    right: 0;
+    #{$right}: 0;
     top: 0;
     @include transition(all .3s ease);
     
@@ -2061,12 +2061,12 @@ div.cs-skin-slide{
 }
 .tt-menu {
   width: 100%;
-  padding: 3px 10px 3px 3px;
+  padding: side-values(3px 10px 3px 3px);
   background-color: $color-white;
   border: 1px solid rgba(0, 0, 0, 0.07);
   border-top:0;
-  border-bottom-right-radius: 2px;
-  border-bottom-left-radius: 2px;
+  border-bottom-#{$right}-radius: 2px;
+  border-bottom-#{$left}-radius: 2px;
   -webkit-box-shadow: 0 4px 5px rgba(0, 0, 0, .15);
   box-shadow: 0 4px 5px rgba(0, 0, 0, .15);
 }
@@ -2074,7 +2074,7 @@ div.cs-skin-slide{
 .tt-suggestion {
   color: $color-master;
   padding: 3px 7px 4px;
-  padding-left: 26px;
+  padding-#{$left}: 26px;
   line-height: 24px;
       &:hover {
       cursor: pointer;
@@ -2114,12 +2114,12 @@ div.cs-skin-slide{
         }
         label {
             margin-top: 6px;
-            padding-left: 12px;
+            padding-#{$left}: 12px;
         }
         .form-control {
             margin-top: -2px;
             margin-bottom: 3px;
-            padding-left: 12px;
+            padding-#{$left}: 12px;
         }
     }
     .transparent {
@@ -2140,7 +2140,7 @@ div.cs-skin-slide{
         padding: 0;
         label {
             margin-top: 6px;
-            padding-left: 12px;
+            padding-#{$left}: 12px;
         }
         .form-input-group{
             width: 100%;
@@ -2148,7 +2148,7 @@ div.cs-skin-slide{
         .form-control {
             margin-top: -2px;
             margin-bottom: 3px;
-            padding-left: 12px;
+            padding-#{$left}: 12px;
         }
         .input-group-addon {
             min-width: calc(50px);

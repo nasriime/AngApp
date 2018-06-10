@@ -22,8 +22,8 @@
     .container-fluid{
          &.container-fixed-lg{
             width: $layout-container-fixed-lg;
-            margin-right: auto;
-            margin-left: auto;
+            margin-#{$right}: auto;
+            margin-#{$left}: auto;
         }
     }
     .menu-pin .container-fluid.container-fixed-lg{
@@ -37,17 +37,17 @@
     // }
 
      .col-xlg-1, .col-xlg-2, .col-xlg-3, .col-xlg-4, .col-xlg-5, .col-xlg-6, .col-xlg-7, .col-xlg-8, .col-xlg-9, .col-xlg-10, .col-xlg-11 {
-        // float: left;
+        // float: $left;
         min-height: 1px;
-        padding-left: 15px;
-        padding-right: 15px;
+        padding-#{$left}: 15px;
+        padding-#{$right}: 15px;
         position: relative;
     }
     .col-xlg-12 {
-        // float: left;
+        // float: $left;
         min-height: 1px;
-        padding-left: 15px;
-        padding-right: 15px;
+        padding-#{$left}: 15px;
+        padding-#{$right}: 15px;
         position: relative;
         // width: 100%;
         flex: 0 0 100%;
@@ -109,121 +109,121 @@
         max-width: 8.33333%;
     }
     .col-xlg-pull-12 {
-        right: 100%;
+        #{$right}: 100%;
     }
     .col-xlg-pull-11 {
-        right: 91.6667%;
+        #{$right}: 91.6667%;
     }
     .col-xlg-pull-10 {
-        right: 83.3333%;
+        #{$right}: 83.3333%;
     }
     .col-xlg-pull-9 {
-        right: 75%;
+        #{$right}: 75%;
     }
     .col-xlg-pull-8 {
-        right: 66.6667%;
+        #{$right}: 66.6667%;
     }
     .col-xlg-pull-7 {
-        right: 58.3333%;
+        #{$right}: 58.3333%;
     }
     .col-xlg-pull-6 {
-        right: 50%;
+        #{$right}: 50%;
     }
     .col-xlg-pull-5 {
-        right: 41.6667%;
+        #{$right}: 41.6667%;
     }
     .col-xlg-pull-4 {
-        right: 33.3333%;
+        #{$right}: 33.3333%;
     }
     .col-xlg-pull-3 {
-        right: 25%;
+        #{$right}: 25%;
     }
     .col-xlg-pull-2 {
-        right: 16.6667%;
+        #{$right}: 16.6667%;
     }
     .col-xlg-pull-1 {
-        right: 8.33333%;
+        #{$right}: 8.33333%;
     }
     .col-xlg-pull-0 {
-        right: 0;
+        #{$right}: 0;
     }
     .col-xlg-push-12 {
-        left: 100%;
+        #{$left}: 100%;
     }
     .col-xlg-push-11 {
-        left: 91.6667%;
+        #{$left}: 91.6667%;
     }
     .col-xlg-push-10 {
-        left: 83.3333%;
+        #{$left}: 83.3333%;
     }
     .col-xlg-push-9 {
-        left: 75%;
+        #{$left}: 75%;
     }
     .col-xlg-push-8 {
-        left: 66.6667%;
+        #{$left}: 66.6667%;
     }
     .col-xlg-push-7 {
-        left: 58.3333%;
+        #{$left}: 58.3333%;
     }
     .col-xlg-push-6 {
-        left: 50%;
+        #{$left}: 50%;
     }
     .col-xlg-push-5 {
-        left: 41.6667%;
+        #{$left}: 41.6667%;
     }
     .col-xlg-push-4 {
-        left: 33.3333%;
+        #{$left}: 33.3333%;
     }
     .col-xlg-push-3 {
-        left: 25%;
+        #{$left}: 25%;
     }
     .col-xlg-push-2 {
-        left: 16.6667%;
+        #{$left}: 16.6667%;
     }
     .col-xlg-push-1 {
-        left: 8.33333%;
+        #{$left}: 8.33333%;
     }
     .col-xlg-push-0 {
-        left: 0;
+        #{$left}: 0;
     }
     .col-xlg-offset-12 {
-        margin-left: 100%;
+        margin-#{$left}: 100%;
     }
     .col-xlg-offset-11 {
-        margin-left: 91.6667%;
+        margin-#{$left}: 91.6667%;
     }
     .col-xlg-offset-10 {
-        margin-left: 83.3333%;
+        margin-#{$left}: 83.3333%;
     }
     .col-xlg-offset-9 {
-        margin-left: 75%;
+        margin-#{$left}: 75%;
     }
     .col-xlg-offset-8 {
-        margin-left: 66.6667%;
+        margin-#{$left}: 66.6667%;
     }
     .col-xlg-offset-7 {
-        margin-left: 58.3333%;
+        margin-#{$left}: 58.3333%;
     }
     .col-xlg-offset-6 {
-        margin-left: 50%;
+        margin-#{$left}: 50%;
     }
     .col-xlg-offset-5 {
-        margin-left: 41.6667%;
+        margin-#{$left}: 41.6667%;
     }
     .col-xlg-offset-4 {
-        margin-left: 33.3333%;
+        margin-#{$left}: 33.3333%;
     }
     .col-xlg-offset-3 {
-        margin-left: 25%;
+        margin-#{$left}: 25%;
     }
     .col-xlg-offset-2 {
-        margin-left: 16.6667%;
+        margin-#{$left}: 16.6667%;
     }
     .col-xlg-offset-1 {
-        margin-left: 8.33333%;
+        margin-#{$left}: 8.33333%;
     }
     .col-xlg-offset-0 {
-        margin-left: 0;
+        margin-#{$left}: 0;
     }
 
 }
@@ -271,13 +271,13 @@
                 width: 245px;
             }
             .page-container{
-                padding-left: 0;
+                padding-#{$left}: 0;
                 .page-content-wrapper {
                     .content{
-                        padding-left:$layout-sidepanel-pin-width;
+                        padding-#{$left}:$layout-sidepanel-pin-width;
                     } 
                     .footer{
-                        left: $layout-sidepanel-pin-width;
+                        #{$left}: $layout-sidepanel-pin-width;
                     }
                 }
             }
@@ -307,8 +307,8 @@
             }
             .header .brand{
                 width: 200px;
-                text-align: left;
-                padding-left: 20px;
+                text-align: $left;
+                padding-#{$left}: 20px;
             }
         }
         &.box-layout{
@@ -325,12 +325,12 @@
                 & > .container {
                 background-color: #fff;
                 border-bottom: 1px solid rgba(230, 230, 230, 0.7);
-                padding: 0 20px 0 0;
+                padding: side-values(0 20px 0 0);
                 height: 100%;
               }
             }
             .page-sidebar{
-                left: auto;
+                #{$left}: auto;
                 transform: none !important;
                 -webkit-transform: none !important;
             }
@@ -379,7 +379,7 @@
 
 
     .page-container{
-        padding-left: 0; 
+        padding-#{$left}: 0; 
     }
 
 
@@ -410,7 +410,7 @@
                 & > .container {
                     padding: 0;
                     .pull-right .sm-action-bar{
-                        right: 0;
+                        #{$right}: 0;
                     }
               }
             }
@@ -422,7 +422,7 @@
                 }
             }
             .secondary-sidebar{
-                margin-left: 0;
+                margin-#{$left}: 0;
             }
         }
     }
@@ -435,16 +435,16 @@
             text-align: center;
             .toggle-sidebar{
                 display: block;
-                left: 23px;
+                #{$left}: 23px;
             }
             .mark-email{
-                left: 45px;
+                #{$left}: 45px;
                 position: absolute;
                 top: 23px;
             }
             .quickview-link{
                 position: absolute;
-                right: 0;
+                #{$right}: 0;
                 top: 12px;
             }
         }
@@ -460,7 +460,7 @@
         }
          & > .pull-right{
             .sm-action-bar{
-                right: 0;   
+                #{$right}: 0;   
             }
          }
     }
@@ -481,16 +481,16 @@
     .page-sidebar {
         width: 250px;
         z-index: auto;
-        left: 0 !important;
+        #{$left}: 0 !important;
         -webkit-transform: translate3d(0, 0px, 0px) !important;
         transform: translate3d(0, 0px, 0px) !important;
         .sidebar-menu .menu-items > li ul.sub-menu > li{
-            padding: 0px 30px 0 36px;
+            padding: side-values(0px 30px 0 36px);
         }
     }
 
     .page-container{
-        padding-left: 0;
+        padding-#{$left}: 0;
         // z-index: 100;
         position: relative;
         transition: transform .25s ease;
@@ -502,7 +502,7 @@
     }
 
     .icon-thumbnail{
-        margin-right: 24px;   
+        margin-#{$right}: 24px;   
     }
      .page-sidebar {
         display: none;
@@ -512,7 +512,7 @@
         }
         .page-sidebar-inner{
             z-index: 1;
-            left: 0 !important;
+            #{$left}: 0 !important;
             width: 260px;
             .sidebar-slide{
                 .sidebar-menu{
@@ -530,11 +530,11 @@
     .secondary-sidebar{
         float: none;
         height: auto;
-        left: 50%;
-        margin-left: -125px;
+        #{$left}: 50%;
+        margin-#{$left}: -125px;
         padding: 20px;
         position: absolute;
-        right: 0;
+        #{$right}: 0;
         top: 60px;
         z-index: 9999;
         display: none;
@@ -547,37 +547,37 @@
         display: inline-block;
         position: relative;
         top: inherit;
-        left: inherit;
-        right: inherit;
+        #{$left}: inherit;
+        #{$right}: inherit;
         padding: 20px 0;
         border-radius: 0;
-        float: left;
+        float: $left;
         height: 100%;
     }
     .inner-content, .horizontal-app-menu .inner-content{
         margin: 0;
     }
      .breadcrumb{
-        padding-left:15px; 
-        padding-right:15px; 
+        padding-#{$left}:15px; 
+        padding-#{$right}:15px; 
      }
      .copyright{
-        padding-left:15px; 
-        padding-right:15px;  
+        padding-#{$left}:15px; 
+        padding-#{$right}:15px;  
      }
 
     // Pages Notification customizations
     body > .pgn-wrapper[data-position="top"] {
         top: $layout-mobile-header-height;
-        left: 0;
+        #{$left}: 0;
     }
     body > .pgn-wrapper[data-position="bottom"] {
-        left: 0;
+        #{$left}: 0;
     }
 
     body > .pgn-wrapper[data-position$='-left'] {
-        left:  20px;
-        right: auto;
+        #{$left}:  20px;
+        #{$right}: auto;
     }
 
     .sm-table{
@@ -586,7 +586,7 @@
     }
     .user-profile-wrapper{
         position: absolute;
-        right: 50px;
+        #{$right}: 50px;
         top: -9px;
     }
 
@@ -602,7 +602,7 @@
         thead tr { 
             position: absolute;
             top: -9999px;
-            left: -9999px;
+            #{$left}: -9999px;
             
         }
         tr{
@@ -614,9 +614,9 @@
             border: none;
             border-bottom: 1px solid #eee; 
             position: relative;
-            padding-left: 50%; 
+            padding-#{$left}: 50%; 
             white-space: normal;
-            text-align:left;
+            text-align:$left;
             &:last-child{
                 border-bottom: 0;
             }
@@ -625,11 +625,11 @@
                 position: absolute;
                 /* Top/left values mimic padding */
                 top: 6px;
-                left: 6px;
+                #{$left}: 6px;
                 width: 45%; 
-                padding-right: 10px; 
+                padding-#{$right}: 10px; 
                 white-space: nowrap;
-                text-align:left;
+                text-align:$left;
                 font-weight: bold;
             }
             &:before { content: attr(data-title); 
@@ -653,7 +653,7 @@
     }
 
     .overlay{
-        padding-left: 15px;
+        padding-#{$left}: 15px;
     }
 }
 
@@ -690,10 +690,10 @@
     border-width: 0;
   }
   .sm-b-r{
-    border-right-width:1px;
+    border-#{$right}-width:1px;
   }
   .sm-b-l{
-    border-left-width:1px;
+    border-#{$left}-width:1px;
   }
   .sm-b-t{
     border-top-width:1px;
@@ -703,7 +703,7 @@
   }
   .sidebar-menu{
     .icon-thumbnail {
-        margin-right: 15px;
+        margin-#{$right}: 15px;
     }
   }
 }
@@ -787,15 +787,15 @@
     
     .page-sidebar .sidebar-menu .menu-items > li{
         & > a{
-            padding-left: 27px;
+            padding-#{$left}: 27px;
         }
         ul.sub-menu > li {
-            padding: 0px 27px 0 31px;
+            padding: side-values(0px 27px 0 31px);
         }
     }
 
     .icon-thumbnail {
-        margin-right: 21px;
+        margin-#{$right}: 21px;
     }
     .error-page{
         .error-container{
@@ -835,11 +835,11 @@
     .secondary-sidebar{
         float: none;
         height: auto;
-        left: 50%;
-        margin-left: -125px;
+        #{$left}: 50%;
+        margin-#{$left}: -125px;
         padding: 20px;
         position: absolute;
-        right: 0;
+        #{$right}: 0;
         top: $layout-header-height;
         z-index: 9999;
         display: none;
@@ -854,7 +854,7 @@
             width: 100%;
             height: auto;
             bottom: 50px;
-           left: 0;
+           #{$left}: 0;
            top: 0;
              position: absolute;
             z-index: 1000;
@@ -862,14 +862,14 @@
             .item{
                 padding: 8px;
                 .inline{
-                    margin-left: 5px;
+                    margin-#{$left}: 5px;
                     width: 188px;
                 }
             }
         }
         
         .split-details{
-            margin-left: 0;
+            margin-#{$left}: 0;
             width: 100%;
 
             .email-content-wrapper{
@@ -913,8 +913,8 @@
     }
 
     .jumbotron,.container-fluid{
-        padding-left: 0;
-        padding-right: 0;
+        padding-#{$left}: 0;
+        padding-#{$right}: 0;
 
     }
    
@@ -928,15 +928,15 @@
 
     .page-sidebar .sidebar-menu .menu-items > li{
         & > a{
-            padding-left: 20px;
+            padding-#{$left}: 20px;
         }
         ul.sub-menu > li {
-            padding: 0px 25px 0 28px;
+            padding: side-values(0px 25px 0 28px);
         }
     }
 
     .icon-thumbnail {
-        margin-right: 20px;
+        margin-#{$right}: 20px;
     }
 
     .sm-pull-bottom, .sm-pull-up{
@@ -954,19 +954,19 @@
     padding: 0px;
   }
   .sm-text-right{
-  text-align: right !important;
+  text-align: $right !important;
   }
   .sm-text-left{
-  text-align: left !important;
+  text-align: $left !important;
   }
   .sm-text-center{
   text-align: center !important;
   }
   .sm-pull-right{
-  float: right !important;
+  float: $right !important;
   }
   .sm-pull-left{
-  float: left !important;
+  float: $left !important;
   } 
   .sm-pull-reset{
     float: none !important;
@@ -983,8 +983,8 @@
     height: auto;
   }
   .email-composer {
-    padding-left: 30px;
-    padding-right: 30px;
+    padding-#{$left}: 30px;
+    padding-#{$right}: 30px;
   }
 
   .sm-padding-10 {
@@ -996,8 +996,8 @@
     height: auto;
   }
   .login-box{
-    padding-right: 15px;
-    padding-left: 15px;
+    padding-#{$right}: 15px;
+    padding-#{$left}: 15px;
   }
 
     .visible-xs-inline-block {
@@ -1048,10 +1048,10 @@
                     top: 12px;
                 }
                 .toggle-sidebar{
-                    left: 14px;
+                    #{$left}: 14px;
                 }
                 .mark-email{
-                    left: 35px;
+                    #{$left}: 35px;
                     top: 14px;
                 }
                 .quickview-link{
@@ -1085,7 +1085,7 @@
     }
     .panel {
         .panel-heading{
-            padding-left: 15px;
+            padding-#{$left}: 15px;
         }
         .panel-body{
             padding: 15px;
@@ -1104,7 +1104,7 @@
     }
 
     .map-controls{
-        left: 10px;
+        #{$left}: 10px;
     }
     .register-container{
         height: auto !important;

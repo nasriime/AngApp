@@ -26,7 +26,7 @@
                     color:$color-master-dark;
                 }
                 &:first-child {
-                    padding-left: 18px !important;
+                    padding-#{$left}: 18px !important;
                 }
                 .btn {
                     margin-top: -20px;
@@ -58,7 +58,7 @@
                     color:#000;
                 }
                 .checkbox label::after{
-                    left: 0.5px;
+                    #{$left}: 0.5px;
                 }
             }
             &.selected td {
@@ -104,8 +104,8 @@
         thead {
             tr {
                 th {
-                    padding-left: 20px;
-                    padding-right: 20px;
+                    padding-#{$left}: 20px;
+                    padding-#{$right}: 20px;
                 }
             }
         }
@@ -163,7 +163,7 @@
                     &:first-child:before {
                         content:"\f054";
                         display: inline-block;
-                        margin-right: 8px;
+                        margin-#{$right}: 8px;
                         font-size: 8px;
                         top: -1px;
                         position: relative;
@@ -175,7 +175,7 @@
             .table-inline {
                 td {
                     border: none;
-                    text-align: left;
+                    text-align: $left;
                 }
             }
         }
@@ -215,8 +215,8 @@
     &:before {
         content: "";
         position: absolute;
-        left: 0;
-        right: 0;
+        #{$left}: 0;
+        #{$right}: 0;
         top: 60px;
         bottom: 0;
         background: transparent;
@@ -224,7 +224,7 @@
 
 }
 .dataTables_wrapper .dataTables_paginate{
-    float:right;
+    float:$right;
 }
 .dataTables_wrapper .dataTables_paginate ul > li.disabled a{
     opacity: .5;
@@ -255,7 +255,7 @@
 }
 .dataTables_paginate.paging_bootstrap.pagination{
     padding-top: 0;
-    padding-right:20px;
+    padding-#{$right}:20px;
 }
 .dataTables_wrapper .dataTables_info{
      clear: none;
@@ -266,11 +266,11 @@
 }
 .dataTables_wrapper .dataTables_paginate ul > li {
     display: inline-block;
-    padding-left:0;
+    padding-#{$left}:0;
     font-size: 11px;
 }
 .dataTables_scrollHeadInner{
-    padding-right:0 !important;
+    padding-#{$right}:0 !important;
 }
 .export-options-container{
     position: relative;
@@ -329,10 +329,10 @@ table.dataTable.table-condensed .sorting_desc:after{
 /* Responsive Handlers : Tables */
 @media (max-width: 991px) {
     .dataTables_wrapper .dataTables_info{
-        float: left;
+        float: $left;
     }
     .dataTables_paginate.paging_bootstrap.pagination{
-        float: right;
+        float: $right;
     }
 
 }
@@ -348,7 +348,7 @@ table.dataTable.table-condensed .sorting_desc:after{
   .dataTables_wrapper .dataTables_info,
      .dataTables_wrapper .dataTables_paginate{
         float: none;
-        text-align: left;
+        text-align: $left;
         clear: both;
         display: block;
     }

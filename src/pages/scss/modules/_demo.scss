@@ -9,7 +9,7 @@ $assets-img-url:'/assets/img/';
 
 .builder{
     width: 423px;
-    right: -423px;
+    #{$right}: -423px;
     & > div{
         height:calc(100% - 12px);
     }
@@ -21,7 +21,7 @@ $assets-img-url:'/assets/img/';
             content: '';
             position: absolute;
             top: 84px;
-            right: -10px;
+            #{$right}: -10px;
             z-index: 10;
         }
     }
@@ -58,20 +58,20 @@ $assets-img-url:'/assets/img/';
                      content: '';
                      position: absolute;
                     top: 84px;
-                    right:-10px;
+                    #{$right}:-10px;
                     z-index: 10;
                 }
             }
         }
     }
     .builder-footer{
-        right:0;
-        left:0;
+        #{$right}:0;
+        #{$left}:0;
         z-index: 10;
     }
     .theme-selector.active:before{
         top: 54px;
-        right: 10px;
+        #{$right}: 10px;
     }
     .nav-tabs {
         background-color: transparent;
@@ -83,7 +83,7 @@ $assets-img-url:'/assets/img/';
     }
     .nav-tabs ~ .tab-content{
         position: relative;
-        padding-right: 0px;
+        padding-#{$right}: 0px;
         height: 100%;
         top:0;
         background-color: #fff;
@@ -100,7 +100,7 @@ $assets-img-url:'/assets/img/';
     }
     .builder-close{
         position: absolute;
-        right: 36px;
+        #{$right}: 36px;
         top: 20px;
         padding: 7px;
         width: auto;
@@ -111,7 +111,7 @@ $assets-img-url:'/assets/img/';
         width: 54px;
         height: 50px;
         top: 20%;
-        left: -48px;
+        #{$left}: -48px;
         text-align: center;
         line-height: 50px;
         cursor: pointer;
@@ -123,9 +123,9 @@ $assets-img-url:'/assets/img/';
         height: 50px;
         background-color: #fff;
         top:20%;
-        left: -47px;
+        #{$left}: -47px;
         box-shadow:0 0 9px rgba(191,191,191,.36);
-        border-left: 1px solid rgba(222,227,231,.56);
+        border-#{$left}: 1px solid rgba(222,227,231,.56);
         @include border-left-radius(4px);
     }
     &:after{
@@ -134,7 +134,7 @@ $assets-img-url:'/assets/img/';
         background-color: #fff;
         width: 5px;
         height: 50px;
-        left: 0;
+        #{$left}: 0;
         top: 20%;
     }
     .btn-toggle-theme{
@@ -157,10 +157,10 @@ $assets-img-url:'/assets/img/';
         &:after{
             content: "Content goes here";
             position: absolute;
-            left: 0;
+            #{$left}: 0;
             top: 50%;
             margin-top: -10px;
-            right: 0;
+            #{$right}: 0;
             text-align: center;
             font-size: 26px;
             opacity: .16;
@@ -212,7 +212,7 @@ $assets-img-url:'/assets/img/';
     iframe{
         width: 100%;
         height: 100%;
-        padding: 45px 45px 0 45px;
+        padding: side-values(45px 45px 0 45px);
         @media (max-width:1200px){
             padding: 0;
         }

@@ -8,8 +8,8 @@
 .nav-tabs {
   position: relative;
   & > li {
-    padding-left: 0;
-    padding-right: 0;
+    padding-#{$left}: 0;
+    padding-#{$right}: 0;
     & > a.active {
       &:hover,
       &:focus {
@@ -22,7 +22,7 @@
       display: block;
       border-radius: 0;
       padding: 13px 20px;
-      margin-right:0;
+      margin-#{$right}:0;
       font-family: 'Montserrat';
       font-weight: 500;
       letter-spacing: 0.06em;
@@ -41,7 +41,7 @@
         color: $color-master;
       }
       .tab-icon {
-        margin-right:6px;
+        margin-#{$right}:6px;
       }
     }
   }
@@ -88,20 +88,20 @@
     }
   }
   &.nav-tabs-left {
-    float: left;
-    padding-right:0;
+    float: $left;
+    padding-#{$right}:0;
     & ~ .tab-content {
-      border-left: 1px solid rgba(0, 0, 0, 0.1);
+      border-#{$left}: 1px solid rgba(0, 0, 0, 0.1);
       //IE10 Fix
      -ms-flex: 1;
      -ms-flex-negative:0;
     }
   }
   &.nav-tabs-right {
-    float: right;
-    padding-right: 0;
+    float: $right;
+    padding-#{$right}: 0;
     & ~ .tab-content {
-      border-right: 1px solid rgba(0, 0, 0, 0.1);
+      border-#{$right}: 1px solid rgba(0, 0, 0, 0.1);
       //IE10 Fix
      -ms-flex: 1;
      -ms-flex-negative:0;
@@ -122,7 +122,7 @@
     position: absolute;
     bottom: -2px;
     z-index: 120;
-    left: 0;
+    #{$left}: 0;
   }
   & > li {
     margin-bottom: 0;
@@ -136,7 +136,7 @@
         background-color: $color-danger;
         height: 0px;
         content: '';
-        left: 0;
+        #{$left}: 0;
         z-index: 125;
         top: 100%;
         &.nav-tabs-primary{
@@ -201,13 +201,13 @@
   }
   &.nav-tabs-left {
     & > li > a:after {
-      right: 0;
-      left: auto;
+      #{$right}: 0;
+      #{$left}: auto;
     }
   }
   &.nav-tabs-right {
     & > li > a:after {
-      left: 0;
+      #{$left}: 0;
     }
   }
 }
@@ -225,7 +225,7 @@
     position: absolute;
     bottom: -1px;
     z-index: 100;
-    left: 0;
+    #{$left}: 0;
   }
   & > li {
     & > a{
@@ -244,7 +244,7 @@
           border: medium solid transparent;
           content: "";
           height: 0;
-          left: 50%;
+          #{$left}: 50%;
           pointer-events: none;
           position: absolute;
           width: 0;
@@ -254,12 +254,12 @@
         &:after {
           border-top-color: $body-background;
           border-width: 10px;
-          margin-left:-10px;
+          margin-#{$left}:-10px;
         }
         &:before {
           border-top-color: rgba(0, 0, 0, 0.2);
           border-width: 11px;
-          margin-left:-11px;
+          margin-#{$left}:-11px;
         }
       }
       span {
@@ -289,20 +289,20 @@
           &:before {
             border-top: 11px solid transparent;
             border-bottom: 11px solid transparent;
-            border-left: 11px solid rgba(0, 0, 0, 0.2);
+            border-#{$left}: 11px solid rgba(0, 0, 0, 0.2);
           }
           &:after {
             border-top: 10px solid transparent;
             border-bottom: 10px solid transparent;
-            border-left: 10px solid $body-background;
+            border-#{$left}: 10px solid $body-background;
             margin-top: 1px;
-            margin-right:2px;
+            margin-#{$right}:2px;
           }
           &:after,
           &:before {
             top: auto;
-            right: -22px;
-            left: auto;
+            #{$right}: -22px;
+            #{$left}: auto;
           }
         }
       }
@@ -318,20 +318,20 @@
             &:before {
               border-top: 11px solid transparent;
               border-bottom: 11px solid transparent;
-              border-right: 11px solid rgba(0, 0, 0, 0.2);
+              border-#{$right}: 11px solid rgba(0, 0, 0, 0.2);
             }
             &:after {
               border-top: 10px solid transparent;
               border-bottom: 10px solid transparent;
-              border-right: 10px solid $body-background;
+              border-#{$right}: 10px solid $body-background;
               margin-top: 1px;
-              margin-left:-9px;
+              margin-#{$left}:-9px;
             }
             &:after,
             &:before {
               top: auto;
-              left: -11px;
-              right: auto;
+              #{$left}: -11px;
+              #{$right}: auto;
             }
         }
       }
@@ -363,7 +363,7 @@
         border: 1px solid $color-success;
         content: "";
         height: calc(100% + 1px);
-        left: 0;
+        #{$left}: 0;
         position: absolute;
         top: 0;
         -webkit-transform: translate3d(0,
@@ -486,7 +486,7 @@
       & > a {
         &:after {
           @include translate3d(-100%, 0, 0);
-          left: -1px;
+          #{$left}: -1px;
         }
         span {
           @include translate3d(-5px, 0, 0px);
@@ -543,7 +543,7 @@
   max-width: 100%;
   .cs-placeholder{
     height: 48px;
-    padding: 12px 34px 15px 15px;
+    padding: side-values(12px 34px 15px 15px);
     font-family: 'Montserrat';
     font-weight: 500;
     letter-spacing: 0.06em;
@@ -565,11 +565,11 @@
   &.horizontal{
     display: block;
     .card+.card{
-      border-left:1px solid $panel-border-color;
+      border-#{$left}:1px solid $panel-border-color;
     }
   }
   .card-heading {
-    padding: 13px 18px 10px 22px;
+    padding: side-values(13px 18px 10px 22px);
     &.collapsed {
       background-color: #fff;
     }
@@ -596,7 +596,7 @@
           font-family: 'FontAwesome';
           content: "\f056";
           position: absolute;
-          right:13px;
+          #{$right}:13px;
           top: 36%;
           color: $color-master;
         }
@@ -628,10 +628,10 @@
 .nav-pills {
   > li {
     &:first-child{
-      padding-left: 0;
+      padding-#{$left}: 0;
     }
     // Links rendered as pills
-    padding-left: 0;
+    padding-#{$left}: 0;
     > a {
       color: $color-master;
     }
